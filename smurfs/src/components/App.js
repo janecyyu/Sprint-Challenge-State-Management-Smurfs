@@ -35,7 +35,7 @@ const App = (props) => {
   useEffect(() => {
     // call an action creator
     props.getCharacters();
-  },[props.addCharacters()]);
+  },[newName]);
 
   //console.log("props", props);
   return (
