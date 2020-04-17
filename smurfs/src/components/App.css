@@ -1,3 +1,41 @@
 .App {
   text-align: center;
 }
+
+.banner {
+  background-color: lightPink;
+}
+
+h1 {
+  margin: 0;
+}
+.everyone_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.everyone {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid thistle;
+  width: 200px;
+  height: 200px;
+}
+
+form {
+  padding: 20px;
+}
+
+input {
+  font-size: 1rem;
+}
+button {
+  background-color: tomato;
+  font-size: 1.1rem;
+}
+button:hover{
+  color: aliceblue;
+}
+h4{
+  color: brown;
+}
