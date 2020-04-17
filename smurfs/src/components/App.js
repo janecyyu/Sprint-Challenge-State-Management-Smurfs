@@ -35,22 +35,24 @@ const App = (props) => {
   useEffect(() => {
     // call an action creator
     props.getCharacters();
-  },[newName]);
+  }, [newName]);
 
   //console.log("props", props);
   return (
     <div className="App">
-      <div className="header">
+      <div className="banner">
         <h1>SMURFS! 👩‍❤️‍💙 </h1>
-        {props.smurf.map((c) => (
-          <div key={c.id}>
-            <h3>Name: {c.name}</h3>
-            <h6>Age: {c.age}</h6>
-            <h6>Height: {c.height}</h6>
-          </div>
-        ))}
       </div>
-      <form onSubmit={handleSubmit}>
+      <div className="everyone_container">
+      {props.smurf.map((c) => (
+        <div className="everyone" key={c.id}>
+          <h3>Name: {c.name}</h3>
+          <h4>Age: {c.age}</h4>
+          <h4>Height: {c.height}</h4>
+        </div>
+      ))}
+      </div>
+      <form className="inputForm" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="name"
@@ -58,8 +60,18 @@ const App = (props) => {
           onChange={handleNameChange}
           value={newName}
         />
-        <input type="text" value={newAge} placeholder="age" onChange={handleAgeChange} />
-        <input type="text" value={newHeight} placeholder="height" onChange={handleHeightChange} />
+        <input
+          type="text"
+          value={newAge}
+          placeholder="age"
+          onChange={handleAgeChange}
+        />
+        <input
+          type="text"
+          value={newHeight}
+          placeholder="height"
+          onChange={handleHeightChange}
+        />
         <button onClick={() => props.addCharacters(newName, newAge, newHeight)}>
           create new smurf
         </button>
