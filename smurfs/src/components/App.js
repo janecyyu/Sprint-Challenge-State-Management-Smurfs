@@ -56,9 +56,10 @@ const App = (props) => {
           placeholder="name"
           name="name"
           onChange={handleNameChange}
+          value={newName}
         />
-        <input type="text" placeholder="age" onChange={handleAgeChange} />
-        <input type="text" placeholder="height" onChange={handleHeightChange} />
+        <input type="text" value={newAge} placeholder="age" onChange={handleAgeChange} />
+        <input type="text" value={newHeight} placeholder="height" onChange={handleHeightChange} />
         <button onClick={() => props.addCharacters(newName, newAge, newHeight)}>
           create new smurf
         </button>
